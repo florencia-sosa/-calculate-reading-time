@@ -1,0 +1,13 @@
+ <main>
+  <div class="container">
+    <form [formGroup]="readingForm" (ngSubmit)="onSubmit()">
+      <label class="form-label">Ingresá un texto</label>
+      <textarea formControlName="text"  id="" cols="30" rows="20"></textarea>
+      <div class="alert alert-danger my-2"
+        *ngIf="readingForm.controls['text'].errors && readingForm.controls['text'].dirty">
+        Ingresá algun texto
+      </div>
+      <button class="btn btn-success my-2" [disabled]="readingForm.invalid" type="submit">Estimar</button>
+    </form>
+  </div>
+</main> 
