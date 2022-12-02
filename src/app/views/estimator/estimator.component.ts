@@ -28,6 +28,6 @@ export class EstimatorComponent implements OnInit {
   public date() {
     this.text = this.readingForm.value.text || '';
     this.readingTime = calculateReadingTime(this.text);
-    this.readingTime > 1 ? alert(`Tardarás ${this.readingTime} minutos`) : alert(`Tardarás menos de ${this.readingTime} minuto`)
+    // this.readingTime > 1 ? alert(`Tardarás ${this.readingTime} minutos`) : alert(`Tardarás menos de ${this.readingTime} minuto`)
   }
 }
