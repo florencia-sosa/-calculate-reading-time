@@ -1,10 +1,67 @@
 .container {
-    min-width: 300px;
-    max-width: 500px;
-    width: 100%;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    form {
+
+    .container-form {
+        min-width: 300px;
+        max-width: 500px;
+        text-align: center;
+        margin: auto;
+        h1 {
+            .intense {
+                color: #18898d;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            textarea {
+                resize: none;
+                margin-top: 20px;
+                font-family: "Inter", sans-serif;
+                &:focus-visible {
+                    outline: 3px solid #a24082;
+                }
+            }
+            button {
+                background-color: #a24082;
+                color: white;
+                border: none;
+                margin: 10px auto;
+                font-size: 16px;
+                padding: 10px 0;
+                border-radius: 8px;
+                width: 100%;
+                min-width: 200px;
+                cursor: pointer;
+                font-weight: 600;
+            }
+        }
+    }
+    img {
+        min-width: 200px;
+        max-width: 300px;
+        height: fit-content;
+        margin: auto;
+    }
+}
+
+@media (min-width: 800px) {
+    .container {
+        padding: 0 40px;
         display: flex;
-        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        height: 80vh;
+        .container-form {
+            width: 50%;
+        }
+        img {
+            width: 50%;
+            max-width: 600px;
+        }
     }
 }
