@@ -1,18 +1,21 @@
-header {
-    ul {
-        padding: 20px 200px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
 
-        li {
-            list-style: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            &.active {
-                border-bottom: 3px solid red;
-            
-            }
+nav{
+  margin: 20px 0;
+    display: flex;
+    justify-content: end;
+    height: 40px;
+    p{
+        margin: 10px 20px;
+        padding-bottom: 10px;
+        &.active {
+            border-bottom: 5px solid #18898d;
         }
+    }
+}
+
+
+@media(min-width:600px){
+    nav{
+        padding: 0 40px;
     }
 }

@@ -1,6 +1,4 @@
-<header>
-    <ul>
-        <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> Home </li>
-        <li routerLink="/estimador" routerLinkActive="active"> Estimador</li>
-    </ul>
-</header>
+<nav>
+    <p [routerLink]="'/estimador'"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Estimador</p>
+    <p [routerLink]="'/ejemplos'" routerLinkActive="active">Ejemplos</p>
+</nav>
