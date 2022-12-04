@@ -5,7 +5,7 @@ import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
   { path: 'estimador', component: EstimatorComponent },
-  { path: '**', component: HomeComponent },
+  { path: 'ejemplos', component: HomeComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

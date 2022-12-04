@@ -5,7 +5,7 @@ import { calculateReadingTime } from '../../calculateReadingTime';
 @Component({
   selector: 'app-estimator',
   templateUrl: './estimator.component.html',
-  styleUrls: ['./estimator.component.scss']
+  styleUrls: ['./estimator.component.scss'],
 })
 export class EstimatorComponent implements OnInit {
   public readingForm!: FormGroup;
@@ -19,7 +19,7 @@ export class EstimatorComponent implements OnInit {
 
   public setUpForm() {
     this.readingForm = this.fb.group({
-      text: ['', Validators.required],
+      text: ['', [Validators.required, Validators.minLength(1)]],
     });
   }
   public onSubmit() {
@@ -28,6 +28,8 @@ export class EstimatorComponent implements OnInit {
   public date() {
     this.text = this.readingForm.value.text || '';
     this.readingTime = calculateReadingTime(this.text);
-    // this.readingTime > 1 ? alert(`Tardarás ${this.readingTime} minutos`) : alert(`Tardarás menos de ${this.readingTime} minuto`)
+    this.readingTime > 1
+      ? alert(`Tardarás ${this.readingTime} minutos`)
+      : alert(`Tardarás menos de ${this.readingTime} minuto`);
   }
 }

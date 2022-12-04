@@ -4,17 +4,16 @@
       <h1>Estimador de tiempo <div class="intense">de lectura</div>
       </h1>
       <form [formGroup]="readingForm" (ngSubmit)="onSubmit()">
-        <label class="form-label">Escribe o pega tu texto aquí para contar las palabras</label>
-        <textarea formControlName="text" id="" cols="30" rows="10"
+        <label>Escribe o pega tu texto aquí para contar las palabras</label>
+        <textarea formControlName="text"  cols="30" rows="10"
           placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it ..."></textarea>
-        <div class="alert alert-danger my-2"
-          *ngIf="readingForm.controls['text'].errors && readingForm.controls['text'].dirty">
+        <button [disabled]="readingForm.invalid" type="submit">ESTIMAR</button>
+        <div
+          *ngIf="readingForm.controls['text'].errors && (readingForm.controls['text'].dirty || readingForm.controls['text'].touched)">
           Ingresá algun texto
         </div>
-        <button class="btn btn-success my-2" [disabled]="readingForm.invalid" type="submit">ESTIMAR</button>
       </form>
     </div>
     <img src="../../../assets/img/niña-leyendo.jpg" alt="niña-leyendo">
-
   </div>
 </main>
