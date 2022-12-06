@@ -1,0 +1,80 @@
+.container {
+    padding: 0 20px;
+    h1 {
+        text-align: center;
+    }
+    .container-card {
+        display: flex;
+        flex-wrap: wrap;
+        .card {
+            min-width: 250px;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            border: 4px solid #a24081;
+            .specs {
+                display: flex;
+                justify-content: space-around;
+                strong {
+                    font-size: 18px;
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .container {
+        padding: 0 10%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        .container-card {
+            justify-content: center;
+            .card {
+                max-width: 390px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1777px) {
+    .container {
+        .container-card {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.overlay {
+    top: 0;
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 58, 58, 0.63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modal {
+        min-width: 214px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 20px 50px;
+        text-align: justify;
+        background-color: white;
+        border-radius: 8px;
+        line-height: 20px;
+        p {
+            padding: 10px;
+            max-height: 500px;
+            overflow-y: scroll;
+        }
+    }
+}

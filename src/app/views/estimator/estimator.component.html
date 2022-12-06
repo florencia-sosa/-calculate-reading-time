@@ -5,15 +5,26 @@
       </h1>
       <form [formGroup]="readingForm" (ngSubmit)="onSubmit()">
         <label>Escribe o pega tu texto aquí para contar las palabras</label>
-        <textarea formControlName="text"  cols="30" rows="10"
+        <textarea formControlName="text" cols="30" rows="10"
           placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it ..."></textarea>
         <button [disabled]="readingForm.invalid" type="submit">ESTIMAR</button>
-        <div
-          *ngIf="readingForm.controls['text'].errors && (readingForm.controls['text'].dirty || readingForm.controls['text'].touched)">
-          Ingresá algun texto
+        <div class="container-alert">
+          <div class="alert"
+            *ngIf="readingForm.controls['text'].errors && (readingForm.controls['text'].dirty || readingForm.controls['text'].touched)">
+            Ingresá algun texto <img src="../../../assets/img/warning.png" class="img-alert" alt="">
+          </div>
         </div>
       </form>
     </div>
-    <img src="../../../assets/img/niña-leyendo.jpg" alt="niña-leyendo">
+    <img class="girl-reading-img" src="../../../assets/img/niña-leyendo.jpg" alt="niña-leyendo">
   </div>
 </main>
+
+<div *ngIf="isOpen" class="overlay">
+  <div class="modal">
+    <h2>¿Cuánto tardaré en leer este texto?</h2>
+    <p *ngIf="readingTime>1"> Tardarás aproximadamente {{readingTime}} minutos en leerlo.</p>
+    <p *ngIf="readingTime === 1"> Tardarás aproximadamente {{readingTime}} minuto en leerlo.</p>
+    <button (click)="closeModal()">Intentar con otro</button>
+  </div>
+</div>

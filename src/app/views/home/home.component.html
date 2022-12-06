@@ -1,1 +1,36 @@
-<p>home works!</p>
+<div class="container">
+    <h1>Textos de ejemplo</h1>
+    <div class="container-card">
+        <div *ngFor="let item of exampleText">
+            <div class="card">
+                <h3>{{item.title}}</h3>
+                <h4>{{item.autor}}</h4>
+                <p>{{item.minText}}...</p>
+                <div class="specs">
+                    <div>
+                        <strong> Carácteres</strong>
+                        <br>
+                        <p> {{item.chText}}</p>
+                    </div>
+                    <div>
+                        <strong>Tiempo</strong>
+                        <br>
+                        <p>{{item.time}}'</p>
+                    </div>
+                </div>
+                <button (click)="seeMore(item)"> Ver más</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="isOpen" class="overlay">
+    <div class="modal">
+        <h2>{{selectedText.title}}</h2>
+        <h3>{{selectedText.autor}}</h3>
+        <h3>Tiempo Estimado: {{selectedText.time}}'</h3>
+        <p [innerHTML]="selectedText.text"></p>
+        <button (click)="closeModal()">Intentar con otro</button>
+    </div>
+</div>

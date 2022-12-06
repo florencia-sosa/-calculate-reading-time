@@ -9,8 +9,10 @@ import { calculateReadingTime } from '../../calculateReadingTime';
 })
 export class EstimatorComponent implements OnInit {
   public readingForm!: FormGroup;
-  public text: string = '';
   public readingTime!: number;
+  public text: string = '';
+  public isOpen: boolean = false;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -24,12 +26,14 @@ export class EstimatorComponent implements OnInit {
   }
   public onSubmit() {
     this.date();
+    this.isOpen = true;
+    this.readingForm.reset()
   }
   public date() {
     this.text = this.readingForm.value.text || '';
     this.readingTime = calculateReadingTime(this.text);
-    this.readingTime > 1
-      ? alert(`Tardarás ${this.readingTime} minutos`)
-      : alert(`Tardarás menos de ${this.readingTime} minuto`);
+  }
+  public closeModal(){
+    this.isOpen = false;
   }
 }
