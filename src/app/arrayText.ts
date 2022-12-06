@@ -1,4 +1,4 @@
-import { ReadText } from "./core/interfaces/ReadText";
+import { ReadText } from "./core/interfaces/readText";
 
 export const arrayText: ReadText[] = [
   {

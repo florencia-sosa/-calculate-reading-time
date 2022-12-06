@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SpectsText } from 'src/app/core/interfaces/ReadText';
+import { SpectsText } from 'src/app/core/interfaces/readText';
 import { arrayText } from '../../arrayText';
 import { calculateReadingTime } from '../../calculateReadingTime';
-import { ReadText } from '../../core/interfaces/ReadText';
+import { ReadText } from '../../core/interfaces/readText';
 
 @Component({
   selector: 'app-home',
